@@ -1,0 +1,114 @@
+@import "styles/reset";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400&display=swap");
+@import "styles/variables";
+@import "styles/mixins";
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: "Noto Sans", Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+
+  @include font-size(14px, normal);
+}
+
+h1 {
+  margin-bottom: calcRem(8px);
+
+  @include font-size(24px, bold);
+}
+
+h2 {
+  margin-bottom: calcRem(16px);
+
+  @include font-size(20px, bold);
+}
+
+h3 {
+  margin-bottom: calcRem(16px);
+
+  @include font-size(18px, bold);
+}
+
+h4 {
+  margin-bottom: calcRem(16px);
+
+  @include font-size(16px, bold);
+}
+
+h5 {
+  margin-bottom: calcRem(8px);
+
+  @include font-size(14px, bold);
+}
+
+h6 {
+  margin-bottom: calcRem(8px);
+
+  @include font-size(12px, bold);
+}
+
+p {
+  margin-bottom: calcRem(8px);
+}
+
+strong {
+  font-weight: bold;
+}
+
+em {
+  font-style: italic;
+}
+
+.slash {
+  margin: 0 calcRem(8px);
+}
+
+strong.label {
+  margin-right: calcRem(8px);
+}
+
+.error-msg {
+  color: $brand-error;
+}
+
+.loading {
+  display: block;
+  margin-top: calcRem(40px);
+  text-align: center;
+  width: 100%;
+
+  @include font-size(18px, normal);
+}
+
+.container {
+  margin: 0 auto;
+  max-width: calcRem(960px);
+}
+
+@include breakpoint($lg) {
+  .main {
+    // Mind the gap between the gradient transition and 'weather' background.
+    // This maintains the left sidebar lightblue
+    background: $brand-secondary;
+    background: linear-gradient(90deg, $brand-secondary 0%, $brand-secondary 24%, $white 24%, $white 100%);
+
+    > .container {
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+      height: calc(100vh - 256px);
+    }
+  }
+
+  .weather {
+    margin: 0;
+  }
+}
+
+@include breakpoint($xl) {
+  .main {
+    background: linear-gradient(90deg, $brand-secondary 0%, $brand-secondary 26%, $white 26%, $white 100%);
+  }
+}

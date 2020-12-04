@@ -1,0 +1,27 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.runway-list {
+  padding: calcRem(24px);
+
+  @include card();
+
+  ul {
+    margin-bottom: calcRem(24px);
+  }
+}
+
+@include breakpoint($md) {
+  .runway-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: calcRem(16px);
+    grid-row-gap: calcRem(16px);
+
+    ul {
+      margin-bottom: 0;
+
+      @include font-size(14px);
+    }
+  }
+}

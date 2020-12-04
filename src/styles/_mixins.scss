@@ -1,0 +1,35 @@
+@import "./variables";
+
+@function calcRem($size) {
+  $rem-size: $size / 16px;
+  @return #{$rem-size}rem;
+}
+
+@mixin card() {
+  .card-header {
+    color: $black-900;
+
+    margin-bottom: calcRem(8px);
+  }
+
+  .card-title,
+  .card-subtitle {
+    margin-bottom: 0;
+  }
+
+  .card-body {
+    color: $brand-tertiary;
+  }
+}
+
+@mixin font-size($size: calcRem(16px), $weight: normal) {
+  font-size: $size;
+  font-size: calcRem($size);
+  font-weight: $weight;
+}
+
+@mixin breakpoint($width: $md) {
+  @media screen and (min-width: #{$width}) {
+    @content;
+  }
+}

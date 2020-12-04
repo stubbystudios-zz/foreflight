@@ -1,0 +1,27 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.weather {
+  background: $brand-secondary;
+  padding: calcRem(24px);
+
+  @include card();
+}
+
+@include breakpoint($md) {
+  .weather {
+    ul {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-column-gap: calcRem(16px);
+    }
+  }
+}
+
+@include breakpoint($lg) {
+  .weather {
+    ul {
+      display: block;
+    }
+  }
+}

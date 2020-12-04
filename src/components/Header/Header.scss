@@ -1,0 +1,17 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.app-header {
+  background: $brand-primary;
+
+  .container {
+    padding: calcRem(8px) calcRem(24px);
+  }
+
+  .logo {
+    background: url("../../img/logo.png") center center no-repeat transparent;
+    background-size: contain;
+    height: calcRem(40px);
+    width: calcRem(130px);
+  }
+}
